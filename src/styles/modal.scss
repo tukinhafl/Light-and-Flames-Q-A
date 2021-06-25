@@ -1,0 +1,91 @@
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  height: 400px;
+  width: 500px;
+  background-color: rgb(107, 95, 106);
+
+  .title-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    background-color: rgb(139, 121, 139);
+
+    h2 {
+      text-align: center;
+      color: black;
+    }
+  }
+
+  .content-button{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    button {
+      cursor: pointer;
+      border: none;
+      height: 50px;
+      width: 200px;
+    }
+
+    .button-delete {
+      justify-content: space-between;
+      display: flex;
+      background-color: hsl(0, 59%, 56%);
+
+      .check-no {
+        background-color: hsl(0, 90%, 36%);
+        height: 50px;
+        width: 50px;
+
+        i {
+          font-size: 2.5rem;
+          color: white;
+          position: relative;
+          top: 5px;
+        }
+      }
+
+      p {
+        width: 150px;
+        color: white;
+        align-self: center;
+        font-size: 1.75rem;
+      }
+    }
+  
+    .button-accept {
+      justify-content: space-between;
+      display: flex;
+      background-color: hsl(120, 62%, 55%);
+
+      .check-yes {
+        background-color: hsl(120, 93%, 32%);
+        height: 50px;
+        width: 50px;
+
+        i {
+          font-size: 2.5rem;
+          color: white;
+          position: relative;
+          top: 5px;
+        }
+      }
+
+      p {
+        width: 150px;
+        align-self: center;
+        font-size: 1.75rem;
+        color: #fff;
+      }
+    }
+
+  }
+}
