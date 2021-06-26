@@ -10,7 +10,7 @@ export function Button({ isOutlined = false, ...props }: ButtonProps) {
   const { theme } = useTheme()
   return(
     <button 
-    className={`button ${isOutlined ? 'outlined' : ''} ${theme}`} 
+    className={`button ${isOutlined ? 'outlined' : ''} ${theme === 'light' ? 'light' : 'flames'}`} 
     {...props} 
     />     
   )

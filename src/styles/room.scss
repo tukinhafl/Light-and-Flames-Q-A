@@ -1,12 +1,18 @@
 #page-room  {
 
-  // &.flames {
-  //   background: #510606;
-  // }
+  &.flames {
+    background-image: url(../assets/images/fogo.jpg);
+    background-repeat: round;
+    height: 100vh;
+  }
 
   header {
     padding: 24px;
     border-bottom: 1px solid #e2e2e2;
+
+    &.flames {
+      border-bottom: 1px solid #e77432;
+    }
 
     .content {
       max-width: 1128px;
@@ -25,6 +31,34 @@
 
         button {
           height: 40px;
+
+          &.sign-out-hidden {
+            display: none;
+          }
+
+          &.sign-out {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            border-radius: 8px;
+            background: #FFF;
+            border: 1px solid #835afd;
+            color: #835afd;
+            padding: 0 32px;
+            cursor: pointer;
+            transition: filter 0.2s;
+
+            &:not(:disabled):hover {
+              filter: brightness(0.9);
+            }
+
+            &.flames {
+              border: 1px solid #510606;
+              color: #510606;
+              background-color: #e77432;
+            }
+          }
         }
       }
     }
@@ -44,9 +78,10 @@
         font-size: 24px;
         color: #29292e;
 
-        // &.flames {
-        //   color: #FFF;
-        // }
+        &.flames {
+          opacity: 0.6;
+          color: #FFF;
+        }
       }
 
       span {
@@ -57,6 +92,11 @@
         color: #FFF;
         font-weight: 500;
         font-size: 14px;
+
+        &.flames {
+          color: #510606;
+          background: #e77432;
+        }
       }
     }
 
@@ -70,6 +110,10 @@
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
         resize: vertical;
         min-height: 130px;
+
+        &.flames {
+          opacity: 0.8;
+        }
       }
 
       .form-footer {
@@ -93,6 +137,11 @@
             color: #29292e;
             font-weight: 500;
             font-size: 14px;
+
+            &.flames {
+              opacity: 0.6;
+              color: #FFF;
+            }
           }
         }
 
@@ -100,6 +149,10 @@
           font-size: 14px;
           color: #737380;
           font-weight: 500;
+
+          &.flames {
+            color: gray;
+          }
 
           button {
             background: transparent;
@@ -109,6 +162,10 @@
             font-size: 14px;
             font-weight: 500;
             cursor: pointer;
+
+            &.flames {
+              color: #e77432;
+            }
           }
         }
       }
@@ -116,6 +173,8 @@
 
     .question-list {
       margin-top: 32px;
+      overflow: auto;
+      max-height: 532px;
     }
   }
 }

@@ -1,13 +1,4 @@
-
-
-// @function highlightedQuestion(likes) {
-//   @if (likes >= 1) {
-//     @return url(https://acegif.com/wp-content/gifs/fire-15.gif) 50 / 10px stretch;
-//   }
-// }
-
 .question {
-  // border-image: highlightedQuestion(questions.likeCount);
 
   background: #fefefe;
   border-radius: 8px;
@@ -18,9 +9,17 @@
     margin-top: 8px;
   }
 
+  &.flames {
+    opacity: 0.8;
+  }
+
   &.highlighted {
     background: #F4f0FF;
     border: 1px solid #835afd;
+
+    &.flames {
+      border-image: url(https://acegif.com/wp-content/gifs/fire-15.gif) 50 / 8px stretch;
+    }
 
     footer .user-info span {
       color: #29292e;
@@ -29,6 +28,11 @@
 
   &.answered {
     background: #DBDCDD;
+
+    &.flames {
+      opacity: 0.9;
+      background: #8f9193;
+    }
   }
 
   p {
@@ -78,8 +82,16 @@
         &.liked {
           color: #835afd;
 
+          &.flames {
+            color: #e77432;
+          }
+
           svg path {
             stroke: #835afd;
+
+            &.flames {
+              stroke: #e77432;
+            }
           }
         }
       }

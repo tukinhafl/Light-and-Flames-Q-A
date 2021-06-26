@@ -8,6 +8,11 @@
   cursor: pointer;
   display: flex;
 
+  &.flames {
+    opacity: 0.8;
+    border: none;
+  }
+
   div {
     height: 40px;
     background: #835afd;
@@ -15,6 +20,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.flames {
+      background: #e77432;
+    }
   }
 
   span {
@@ -25,5 +34,9 @@
     width: 240px;
     font-size: 14px;
     font-weight: 500;
+
+    &.flames {
+      color: #510606;
+    }
   }
 }

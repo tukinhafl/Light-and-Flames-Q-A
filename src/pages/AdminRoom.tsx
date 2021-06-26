@@ -12,6 +12,7 @@ import { database } from '../services/firebase'
 import { useState } from "react"
 import Modal from '@material-ui/core/Modal';
 import '../styles/modal.scss'
+import { useTheme } from '../hooks/useTheme'
 
 type RoomParams = {
   id: string;
@@ -23,6 +24,7 @@ export function AdminRoom() {
   const roomId = params.id
   const { questions, title } = useRoom(roomId)
   const [open, setOpen] = useState<boolean>(false)
+  const { theme } = useTheme()
 
   async function handleEndRoom() {
     await database.ref(`rooms/${roomId}`).update({
@@ -57,8 +59,8 @@ export function AdminRoom() {
   }
 
   return (
-    <div id="page-room">
-      <header>
+    <div id="page-room" className={theme}>
+      <header className={theme}>
         <div className='content'>
           <img src={logoImg} alt="Rocket" />
           <div>
@@ -70,8 +72,8 @@ export function AdminRoom() {
 
       <main className='content'>
         <div className='room-title'>
-          <h1>Sala {title}</h1>
-          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+          <h1 className={theme}>Sala {title}</h1>
+          {questions.length > 0 && <span className={theme}>{questions.length} pergunta(s)</span>}
         </div>
 
         <div className="question-list">

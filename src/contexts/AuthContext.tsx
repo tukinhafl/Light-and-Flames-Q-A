@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useState, useEffect } from 'react'
 import { auth, firebase } from '../services/firebase'
+import { useHistory } from "react-router-dom"
 
 type User = {
   id: string;
@@ -10,6 +11,7 @@ type User = {
 type AuthContextType = {
   user: User | undefined;
   signInWithGoogle: () => Promise<void>;
+  signOut: () => void;
 }
 
 type AuthContextProviderProps = {
@@ -19,7 +21,7 @@ type AuthContextProviderProps = {
 export const AuthContext = createContext({} as AuthContextType)
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
-
+  const history = useHistory()
   const [user, setUser] = useState<User>()
 
   useEffect(() => {
@@ -63,15 +65,15 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     }
   }
 
-  // botao para log off 
-  // async function signOut() {
-  //   await auth.signOut()
-  //   setUser(undefined)
-  //   history.pushState('/')
-  // }
+  // botao para logoff 
+  async function signOut() {
+    await auth.signOut()
+    setUser(undefined)
+    history.push('/')
+  }
 
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, signInWithGoogle, signOut }}>
       {props.children}
     </AuthContext.Provider>
   );

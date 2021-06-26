@@ -25,6 +25,12 @@
         background: #FFF;
         border: 1px solid #835afd;
         color: #835afd;
+        
+        &.flames {
+          border: 1px solid #510606;
+          color: #510606;
+          background-color: #e77432;
+        }
       }
 
       &:not(:disabled):hover {
