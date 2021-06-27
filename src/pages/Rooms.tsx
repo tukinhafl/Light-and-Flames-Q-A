@@ -24,8 +24,7 @@ export function Room() {
   const { title, questions } = useRoom(roomId)
   const { theme } = useTheme()
   const history = useHistory()
-
-  // Nao permitir acesso do usuario depois que a sala foi fechada 
+ 
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`)
 
@@ -35,7 +34,6 @@ export function Room() {
       }
     })
   }, [roomId])
-
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault()
@@ -49,7 +47,7 @@ export function Room() {
         className: 'toast'
       });
     } else if (newQuestion.trim() !== '') {
-      toast.success('Sendeed to hoster, await for his answer.', {
+      toast.success('Sendeed to hoster, wait for his answer.', {
         className: 'toast'
       })
     }

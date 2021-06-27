@@ -65,7 +65,6 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     }
   }
 
-  // botao para logoff 
   async function signOut() {
     await auth.signOut()
     setUser(undefined)
