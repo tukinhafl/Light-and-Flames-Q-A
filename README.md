@@ -6,18 +6,6 @@
 
 <h1 align="center">Aplicativo dinamico de manipulação de perguntas e respostas para reuniões.</h1>
 
-Tabela de conteúdos
-=================
-
-<p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
- <a href="#autor">Autor</a>
-</p>
-
 <h4 align="center"> 
 	🚀 Projeto finalizado. 🚀
 </h4>
