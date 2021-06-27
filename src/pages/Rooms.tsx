@@ -33,6 +33,7 @@ export function Room() {
         history.push('/')
       }
     })
+    // eslint-disable-next-line
   }, [roomId])
 
   async function handleSendQuestion(event: FormEvent) {

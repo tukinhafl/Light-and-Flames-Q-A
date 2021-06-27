@@ -1,4 +1,13 @@
+@mixin paraTelasPequenas($media) {
+  @media (max-width: $media) { @content; }
+}
+
 .modal {
+  @include paraTelasPequenas(425px) {
+    width: 350px;
+    height: 250px;
+  }
+
   position: absolute;
   left: 50%;
   top: 40%;
@@ -24,12 +33,20 @@
   }
 
   .content-button{
+    @include paraTelasPequenas(425px) {
+      padding-top: 0.75rem;
+    }
+
     padding-top: 2rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     button {
+      @include paraTelasPequenas(425px) {
+        width: 150px;
+      }
+
       cursor: pointer;
       border: none;
       height: 50px;
